@@ -34,3 +34,11 @@ Cypress.Commands.add("login", (locator,toDestination) => {
         }
     })
     })
+
+    Cypress.Commands.add("validatingUrl", (parentNavigation,childNavigation,urlValidation) => 
+    {
+          cy.contains(parentNavigation).trigger('mouseover')
+          cy.contains(childNavigation).click({force:true})
+          cy.url().should('contain',urlValidation)
+          cy.get(-1)
+    })
