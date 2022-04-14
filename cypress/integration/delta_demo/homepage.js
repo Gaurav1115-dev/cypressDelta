@@ -31,7 +31,7 @@ describe('example to-do app', () => {
         cy.get('@tobutton').click()
         cy.get('@inputValuesfromDynamicDropdown').clear()
         cy.get('@inputValuesfromDynamicDropdown').type('new york')
-        cy.login('.airport-list a span','LGA') //will explain you while creating the framework
+        cy.login('.airport-list a span', 'LGA') //will explain you while creating the framework
 
         // cy.get('.airport-list a span').each(($toDestination, index, $list) => {
         //     // $el is a wrapped jQuery element
@@ -52,22 +52,35 @@ describe('example to-do app', () => {
         // .find('li')
         // .contains('One Way')
         // .click()
-        //cy.login('#selectTripType-desc li','One Way')
-        cy.get('#selectTripType-desc li').each(($triptype, index, $list) => {
-            // $el is a wrapped jQuery element
-            if ($triptype.text() === 'One Way') {
-                // wrap this element so we can
-                // use cypress commands on it
-                cy.wrap($triptype).click({ force: true })
-            }
-        })
+        //cy.login('#selectTripType-desc li','Round Trip')
+        // cy.tripType('.calenderDepartSpan' ,'td.dl-datepicker-available-day .dl-state-default')
+         cy.tripType('.calenderDepartSpan' ,'td.dl-datepicker-available-day a.dl-state-default')
+        
+        // cy.get('#selectTripType-desc li').each(($triptype, index, $list) => {
+        //     // $el is a wrapped jQuery element
+        //     if ($triptype.text() === 'Round Trip') {
+        //         // wrap this element so we can
+        //         // use cypress commands on it
+        //         cy.wrap($triptype).click({ force: true })
+        //     }
+        // })
+        //cy.tripType('.calenderDepartSpan','td.dl-datepicker-available-day .dl-state-default')
+        //  cy.get('div.calDispValueCont').click({ force: true })
 
+        // cy.get('.dl-datepicker-current-day :visible').click({ force: true })
 
-        cy.get('div.calDispValueCont').click({force: true})
+       // cy.get('#control-nationality').click()  // open the dropdown
 
-        cy.get('.dl-datepicker-current-day :visible').click({force: true})
+        // cy.get('td.dl-datepicker-available-day')    // all elements with id starting "option-nationality"
+        //     .then($options => {
+        //         const count = $options.length
+        //         const randomIndex = Math.floor(Math.random() * count)
+        //         cy.wrap($options.eq(randomIndex)).click()
+        //     })
 
-        cy.get('.donebutton').click({force:true})
+        //cy.scrollTo('top')
+        //cy.get('button.donebutton:visible').click({ force: true })
+        //cy.get('.donebutton').click({ force: true })
 
         // cy.get('ul#passengers-desc ').click({force: true})
 
@@ -81,6 +94,9 @@ describe('example to-do app', () => {
         })
         //cy.get('').select ('4 Passengers').click({force: true})
         // cy.get('.calenderDepartSpan').should(be.visible)
-  
+
+        cy.get('#shopWithMiles').check({ force: true })
+        cy.get('#btnSubmit').click({ force: true })
+
     })
 })
