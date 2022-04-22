@@ -26,20 +26,13 @@ describe('example to-do app', () => {
         deltaHomePage.getToButton().click()
         deltaHomePage.getDynamicDropdownForToAndFrom().clear()
         deltaHomePage.getDynamicDropdownForToAndFrom().type('New York')
-        cy.Dr('.airport-list a span', 'LGA') //will explain you while creating the framework
+        cy.DropDown('.airport-list a span', 'LGA') //will explain you while creating the framework
     
         cy.tripType('.calenderDepartSpan' ,'td.dl-datepicker-available-day a.dl-state-default')
         
-       
+        cy.DropDown('#passengers-desc li', '5 Passengers')
 
-        cy.get('#passengers-desc li').each(($el, index, $list) => {
-            // $el is a wrapped jQuery element
-            if ($el.text() === '5 Passengers') {
-                // wrap this element so we can
-                // use cypress commands on it
-                cy.wrap($el).click({ force: true })
-            }
-        })
+      
         //cy.get('').select ('4 Passengers').click({force: true})
         // cy.get('.calenderDepartSpan').should(be.visible)
 
