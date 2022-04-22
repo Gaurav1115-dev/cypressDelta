@@ -49,14 +49,14 @@ Cypress.Commands.add("validatingUrl", (parentNavigation, childNavigation, urlVal
 
 Cypress.Commands.add("tripType", (calenderlocator, randomvaluefromcalender) => {
     const tripType = 'Round Trip'
-    cy.pause
+    
     switch (tripType) {
         case 'One Way':
             cy.login('#selectTripType-desc li', 'One Way')
             cy.get(calenderlocator).click({ force: true })
             cy.get(randomvaluefromcalender).then($options => {
                 const count = $options.length
-                const randomIndex = Math.floor(Math.random() * count)
+                const randomIndex = Math.floor(Math.random() * count) 
                 cy.wrap($options.eq(randomIndex)).click({ force: true })
                 cy.get('.donebutton').click()
                 
@@ -67,7 +67,6 @@ Cypress.Commands.add("tripType", (calenderlocator, randomvaluefromcalender) => {
                 cy.login('#selectTripType-desc li', 'Round Trip')
                 for(var i=0 ;i<2;i++)
                 {
-                
                 cy.get(calenderlocator).click({ force: true })
                 cy.get(randomvaluefromcalender).then($options => {
                 const count = $options.length
