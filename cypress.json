@@ -1,3 +1,4 @@
 {
-    "supportfile" : "cypress/support/index.ts"
+    "supportfile" : "cypress/support/index.ts",
+    "chromeWebSecurity": false 
 }

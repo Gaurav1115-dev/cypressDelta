@@ -4,13 +4,16 @@ describe('example to-do app', () => {
     it('Demo Delta ', () => {
         // https://on.cypress.io/_
         
-        //  cy.visit("https://www.delta.com")
+          cy.visit("https://www.delta.com")
         //  cy.contains('Travel Info').trigger('mouseover')
         //  cy.contains('Travel Planning Center').click({force:true})
         //  cy.url().should('contain','travel')
         //  cy.get(-1)
 
-         cy.validatingUrl('Travel Info','Travel Planning Center','travel')
+         cy.validatingUrl('Travel Info','Delta Vacations','travel')
+        
+         //cy.get('div.hero').should('be.visible','visible')
+         cy.contains('Advanced Search Options').invoke('removeAttr', 'target').click();
        
         //cy.get('.sidebar').scrollTo('bottom')
     //     cy.get(':nth-child(3) > .panel-heading > .h4 > .nav-item :visible').click()

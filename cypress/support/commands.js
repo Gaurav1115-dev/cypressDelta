@@ -25,21 +25,41 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import '../support/commands';
-Cypress.Commands.add("login", (locator, toDestination) => {
-    cy.get(locator).each(($listValue, index, $list) => {
+
+
+Cypress.Commands.add("DropDown", (clickonDropDown, selectingValuesFromDropDown) => {
+    cy.get(clickonDropDown).each(($listValue, index, $list) => {
         // $el is a wrapped jQuery element
         // use cypress commands on it
-        if ($listValue.text().includes(toDestination)) {
+        if ($listValue.text().includes(selectingValuesFromDropDown)) {
             cy.wrap($listValue).click({ force: true })
         }
     })
 })
 
+Cypress.Commands.add("ImageValidation", (clickonImage) => {
+    cy.get(clickonImage).each(($listValue, index, $list) => {
+        // $el is a wrapped jQuery element
+        // use cypress commands on it
+        
+        cy.get(clickonImage).invoke('width').then(function(widthofImage){
+            cy.log(widthofImage)
+        });
+       
+        cy.get(clickonImage).invoke('height').then(function(heightofImage){
+            cy.log(heightofImage)
+        })
+    })
+})
+
+    
+
+
 Cypress.Commands.add("validatingUrl", (parentNavigation, childNavigation, urlValidation) => {
     cy.contains(parentNavigation).trigger('mouseover')
     cy.contains(childNavigation).click({ force: true })
     cy.url().should('contain', urlValidation)
-    cy.get(-1)
+    //cy.get(-1)
 })
 
 
@@ -47,12 +67,11 @@ Cypress.Commands.add("validatingUrl", (parentNavigation, childNavigation, urlVal
 // calenderlocator ==>.calenderDepartSpan
 // randomvaluefromcalender ==>td.dl-datepicker-available-day
 
-Cypress.Commands.add("tripType", (calenderlocator, randomvaluefromcalender) => {
-    const tripType = 'Round Trip'
-    
+Cypress.Commands.add("tripType", (calenderlocator, randomvaluefromcalender,tripType) => {
+   
     switch (tripType) {
         case 'One Way':
-            cy.login('#selectTripType-desc li', 'One Way')
+            cy.DropDown('#selectTripType-desc li', 'One Way')
             cy.get(calenderlocator).click({ force: true })
             cy.get(randomvaluefromcalender).then($options => {
                 const count = $options.length
@@ -64,7 +83,7 @@ Cypress.Commands.add("tripType", (calenderlocator, randomvaluefromcalender) => {
             })
             break;
             case 'Round Trip':
-                cy.login('#selectTripType-desc li', 'Round Trip')
+                cy.DropDown('#selectTripType-desc li', 'Round Trip')
                 for(var i=0 ;i<2;i++)
                 {
                 cy.get(calenderlocator).click({ force: true })
