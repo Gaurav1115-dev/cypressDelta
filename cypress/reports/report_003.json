@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2022-04-27T11:00:44.300Z",
+    "end": "2022-04-27T11:01:22.195Z",
+    "duration": 37895,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "30235f0d-21b3-4b84-8821-030e9689fae9",
+      "title": "",
+      "fullFile": "cypress/integration/delta_demo/navigation.js",
+      "file": "cypress/integration/delta_demo/navigation.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b3120868-a02c-46a0-9deb-93c4936930c4",
+          "title": "Navigation For Delta",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Navigation Page ",
+              "fullTitle": "Navigation For Delta Navigation Page ",
+              "timedOut": null,
+              "duration": 35339,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      {\n        \"title\": \"Failed screenshot\",\n        \"value\": \"\\\\delta_demo\\\\navigation.js\\\\Navigation For Delta -- Navigation Page (failed).png\"\n      }\n    ]\n  ]\n}",
+              "code": "// https://on.cypress.io/_\ncy.once('uncaught:exception', () => false);\ncy.visit(\"https://www.delta.com\"); //  cy.contains('Travel Info').trigger('mouseover')\n//  cy.contains('Travel Planning Center').click({force:true})\n//  cy.url().should('contain','travel')\n//  cy.get(-1)\ncy.validatingUrl('Travel Info', 'Delta Vacations', 'delta-vacations'); //  //cy.get('div.hero').should('be.visible','visible')\n//  cy.contains('Advanced Search Options').invoke('removeAttr', 'target').click();\n//cy.get('.sidebar').scrollTo('bottom')\n//     cy.get(':nth-child(3) > .panel-heading > .h4 > .nav-item :visible').click()\n//     //cy.get(':nth-child(3) > .panel-heading > .h4 > .nav-item').click()\n//     //cy.get('.desc > :nth-child(1)').should('be.visible')\n//     cy.get('.desc > :nth-child(1)').should('have.text')\n//    // cy.go('back')\n//      cy.go(-1)\n//     cy.get('.inspiration-sub-nav-link').click()\n//     cy.get(':nth-child(5) > .panel-heading > .h4 > .nav-item').click()\n//     cy.get(':nth-child(2) > .h1').should('have.text','')\n//     cy.go('back')",
+              "err": {
+                "message": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > CustomerInfo is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application",
+                "estack": "ReferenceError: The following error originated from your application code, not from Cypress.\n\n  > CustomerInfo is not defined\n\nWhen Cypress detects uncaught errors originating from your application it will automatically fail the current test.\n\nThis behavior is configurable, and you can choose to turn this off by listening to the `uncaught:exception` event.\n\nhttps://on.cypress.io/uncaught-exception-from-application\n    at Object.init (https://content.delta.com/content/dam/delta-applications/fresh-air-core/21.10.0/js/reclaim-status.js:249:4)\n    at HTMLDocument.<anonymous> (https://content.delta.com/content/dam/delta-applications/fresh-air-core/21.10.0/js/reclaim-status.js:363:22)\n    at cd (https://www.delta.com/etc/designs/global/custom-product.min.js:786:33)\n    at Object.fireWith [as resolveWith] (https://www.delta.com/etc/designs/global/custom-product.min.js:819:9)\n    at Function.ready (https://www.delta.com/etc/designs/global/custom-product.min.js:879:5)\n    at HTMLDocument.b7 (https://www.delta.com/etc/designs/global/custom-product.min.js:888:4)",
+                "diff": null
+              },
+              "uuid": "7eac74f1-b8de-479e-baeb-552bf2e2444a",
+              "parentUUID": "b3120868-a02c-46a0-9deb-93c4936930c4",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "7eac74f1-b8de-479e-baeb-552bf2e2444a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 35339,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

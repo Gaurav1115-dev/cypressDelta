@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-04-27T10:59:55.504Z",
+    "end": "2022-04-27T11:00:22.478Z",
+    "duration": 26974,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3333cc32-6ddb-46d4-89cd-6cc990d79b9b",
+      "title": "",
+      "fullFile": "cypress/integration/delta_demo/homepage.js",
+      "file": "cypress/integration/delta_demo/homepage.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "cacb8bfe-e51f-4b2f-b543-1723b94c6334",
+          "title": "Home Page Validation ",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Page Navigation ",
+              "fullTitle": "Home Page Validation  Page Navigation ",
+              "timedOut": null,
+              "duration": 24181,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// https://on.cypress.io/_\ncy.visit('https://www.delta.com', {\n  timeout: 60000\n});\ncy.fixture('homepage').then(testData => {\n  var deltaHomePage = new _deltaHome.default();\n  deltaHomePage.getFromButton().click();\n  deltaHomePage.getDynamicDropdownForToAndFrom().clear();\n  deltaHomePage.getDynamicDropdownForToAndFrom().type(testData.fromDestination);\n  deltaHomePage.getListOfAirport().click();\n  deltaHomePage.getToButton().click();\n  deltaHomePage.getDynamicDropdownForToAndFrom().clear();\n  deltaHomePage.getDynamicDropdownForToAndFrom().type(testData.toDestination);\n  cy.DropDown('.airport-list a span', 'LGA'); //will explain you while creating the framework\n  cy.tripType('.calenderDepartSpan', 'td.dl-datepicker-available-day a.dl-state-default', 'Round Trip');\n  cy.DropDown('#passengers-desc li', testData.numberOfPassenger); //cy.get('').select ('4 Passengers').click({force: true})\n  // cy.get('.calenderDepartSpan').should(be.visible)\n  cy.get('#shopWithMiles').check({\n    force: true\n  }).should('be.checked', 'checked');\n  cy.get('#btnSubmit').click({\n    force: true\n  });\n});",
+              "err": {},
+              "uuid": "cad8baa5-d8c8-42c4-b2ea-2f087489702e",
+              "parentUUID": "cacb8bfe-e51f-4b2f-b543-1723b94c6334",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cad8baa5-d8c8-42c4-b2ea-2f087489702e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 24181,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "reportFilename": "report",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "charts": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
