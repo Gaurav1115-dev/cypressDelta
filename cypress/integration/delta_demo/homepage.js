@@ -23,9 +23,7 @@ describe('example to-do app', () => {
         deltaHomePage.getDynamicDropdownForToAndFrom().clear()
         deltaHomePage.getDynamicDropdownForToAndFrom().type(testData.fromDestination)
         deltaHomePage.getListOfAirport().click()
-
-
-        
+            
         deltaHomePage.getToButton().click()
         deltaHomePage.getDynamicDropdownForToAndFrom().clear()
         deltaHomePage.getDynamicDropdownForToAndFrom().type(testData.toDestination)
